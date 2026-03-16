@@ -1,8 +1,26 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/Home/HomePage";
+import ReporterDashboard from "./pages/Reporter/ReporterDashboard";
+import AdminDashboard from "./pages/Admin/AdminDashboard";
+import PublicNewsFeed from "./pages/Public/PublicNewsFeed";
+
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline text-blue-600">
-      Hello Tailwind + React 18 + Vite!
-    </h1>
+    <Router>
+      <Routes>
+        {/* Home */}
+        <Route path="/" element={<HomePage />} />
+
+        {/* Reporter */}
+        <Route path="/reporter" element={<ReporterDashboard />} />
+
+        {/* Admin */}
+        <Route path="/admin" element={<AdminDashboard />} />
+
+        {/* Public */}
+        <Route path="/news" element={<PublicNewsFeed />} />
+      </Routes>
+    </Router>
   );
 }
 
